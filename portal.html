@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สยามพอร์ทัล | Siam Portal Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+  <div class="glow-orb orb-1" id="orb-left"></div>
+  <div class="glow-orb orb-2" id="orb-right"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <div class="app-container">
+    
+    <header class="main-header" id="portal-header">
+      <button id="btn-back-to-hub" class="btn btn-outline btn-sm btn-back" style="display: none;">
+        🏛️ กลับหน้าหลัก
+      </button>
+
+      <div class="logo-area">
+        <h1 class="site-title" id="display-site-name">สยามพอร์ทัล</h1>
+        <p class="site-slogan" id="display-site-slogan">ศูนย์รวมข้อมูลดินแดนและโครงการต่างๆ ยุคสยามแฟนตาซี</p>
+      </div>
+      
+      <nav class="main-nav" id="project-navigation" style="display: none;">
+        <button class="nav-tab active" data-tab="home">หน้าแรก</button>
+        <button class="nav-tab" data-tab="guidelines">แนวทาง</button>
+        <button class="nav-tab" data-tab="story">เนื้อเรื่อง / ประวัติ</button>
+        <button class="nav-tab" data-tab="jobs">ข้อมูลอาชีพ</button>
+        <button class="nav-tab" data-tab="map">แผนที่ / เขตปลอดภัย</button>
+        <button class="nav-tab" data-tab="rules">กฎระเบียบ</button>
+        <button class="nav-tab" data-tab="statuses">สถานะพิเศษ</button>
+        <button class="nav-tab" data-tab="services">บริการ / ร้านค้า</button>
+      </nav>
+    </header>
+
+    <section class="portal-hub-view" id="portal-hub-section">
+      <div class="hub-hero">
+        <h2>กรุณาเลือกโครงการที่ต้องการเข้าชม</h2>
+        <p>ค้นหาข้อมูลแผนที่ กฎระเบียบ อาชีพ และข้อมูลที่สำคัญของเซิร์ฟเวอร์ที่คุณชื่นชอบ</p>
+      </div>
+
+      <div class="projects-hub-grid" id="projects-hub-list">
+        
+      </div>
+    </section>
+
+    <div class="project-dashboard-view" id="project-dashboard-section" style="display: none;">
+      
+      <section class="banner-section" id="banner-container">
+        <div class="slider-wrapper">
+          <div class="slides" id="slider-slides">
+            
+          </div>
+          <div class="slider-controls">
+            <button class="slider-arrow prev" id="slider-prev">&#10094;</button>
+            <button class="slider-arrow next" id="slider-next">&#10095;</button>
+          </div>
+          <div class="slider-dots" id="slider-dots">
+          </div>
+        </div>
+      </section>
+
+      <main class="content-area">
+
+        <section class="tab-content active" id="content-home">
+          <div class="section-header">
+            <h2 class="section-title">ประกาศและข่าวสารล่าสุด</h2>
+          </div>
+          <div class="announcements-grid" id="announcements-list">
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-guidelines">
+          <div class="section-header">
+            <h2 class="section-title">แนวทางการเล่น & คู่มือเบื้องต้น</h2>
+          </div>
+          <div class="guidelines-grid" id="guidelines-list">
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-story">
+          <div class="section-header">
+            <h2 class="section-title">เนื้อเรื่องความเป็นมา & Lore</h2>
+          </div>
+          <div class="story-container glass-card" id="story-display">
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-jobs">
+          <div class="section-header">
+            <h2 class="section-title">ข้อมูลสายอาชีพของดินแดน</h2>
+          </div>
+          <div class="jobs-grid" id="jobs-list">
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-map">
+          <div class="section-header">
+            <h2 class="section-title">แผนที่ดินแดน & จุดยุทธศาสตร์สำคัญ</h2>
+          </div>
+          
+          <div class="map-view-container glass-card">
+            <div class="map-wrapper" id="interactive-map-wrapper">
+              <img id="map-background-img" src="map.jpg" alt="Project Map">
+              <div class="map-pins-container" id="map-pins-container">
+              </div>
+            </div>
+            
+            <div class="map-side-panel" id="map-pin-details">
+              <div class="panel-placeholder" id="panel-placeholder">
+                <div class="placeholder-icon">🗺️</div>
+                <h3>เลือกจุดบนแผนที่</h3>
+                <p>คลิกเลือกหมุดบนแผนที่เพื่อดูข้อมูลสถานที่สำคัญ ข้อมูล และระดับความปลอดภัย</p>
+              </div>
+              <div class="panel-content" id="panel-active-content" style="display: none;">
+                <span class="pin-badge" id="pin-detail-badge">Safezone</span>
+                <h3 id="pin-detail-name">ชื่อสถานที่</h3>
+                <p id="pin-detail-desc">รายละเอียดสถานที่...</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="nations-section">
+            <div class="section-header">
+              <h2 class="section-title">ประเทศ / ดินแดน — พันธมิตร &amp; สงคราม</h2>
+            </div>
+            <div class="nations-grid" id="nations-list">
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-rules">
+          <div class="section-header">
+            <h2 class="section-title">กฎกติกาและระเบียบเซิร์ฟเวอร์</h2>
+          </div>
+          <div class="rules-container" id="rules-categories-list">
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-statuses">
+          <div class="section-header">
+            <h2 class="section-title">ระดับสถานะ & ยศศักดิ์</h2>
+          </div>
+          <div class="statuses-grid" id="statuses-list">
+          </div>
+        </section>
+
+        <section class="tab-content" id="content-services">
+          <div class="section-header">
+            <h2 class="section-title">บริการ เติมเงิน & สนับสนุนเซิร์ฟเวอร์</h2>
+          </div>
+          <div class="services-grid" id="services-list">
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="main-footer">
+      <p>&copy; not ready yet</p>
+      <p class="footer-sub">not ready yet</p>
+    </footer>
+
+  </div>
+
+  <script src="projects-data.js"></script>
+  <script src="portal.js"></script>
+</body>
+</html>
