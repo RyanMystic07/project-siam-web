@@ -11,23 +11,23 @@ const PROJECTS_DATA = [
       primaryGlow: "rgba(168, 34, 41, 0.5)",
       bgOrb: "radial-gradient(circle, rgba(168,34,41,0.15) 0%, rgba(212,175,55,0.08) 50%, rgba(12,13,18,0) 100%)"
     },
-    coverImage: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+    coverImage: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
     banners: [
       {
         id: 1,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       },
       {
         id: 2,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       },
       {
         id: 3,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       }
@@ -376,56 +376,56 @@ const PROJECTS_DATA = [
         id: 1,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 2,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 3,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 4,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 5,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 6,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 7,
         name: "not ready yet",
         price: 300,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 8,
         name: "not ready yet",
         price: 450,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       }
     ],
@@ -526,17 +526,17 @@ const PROJECTS_DATA = [
       primaryGlow: "rgba(0, 119, 182, 0.5)",
       bgOrb: "radial-gradient(circle, rgba(0,119,182,0.15) 0%, rgba(0,180,216,0.08) 50%, rgba(12,13,18,0) 100%)"
     },
-    coverImage: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+    coverImage: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
     banners: [
       {
         id: 1,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       },
       {
         id: 2,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       }
@@ -621,21 +621,21 @@ const PROJECTS_DATA = [
         id: 1,
         name: "not ready yet",
         price: 200,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 2,
         name: "not ready yet",
         price: 200,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 3,
         name: "not ready yet",
         price: 200,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
     ],
@@ -673,23 +673,23 @@ const PROJECTS_DATA = [
       primaryGlow: "rgba(6, 5, 7, 0.5)",
       bgOrb: "radial-gradient(circle, rgba(114,9,183,0.15) 0%, rgba(155,93,229,0.08) 50%, rgba(12,13,18,0) 100%)"
     },
-    coverImage: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+    coverImage: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
     banners: [
       {
         id: 1,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       },
       {
         id: 2,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       },
       {
         id: 3,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         title: "not ready yet",
         subtitle: "not ready yet"
       }
@@ -821,21 +821,21 @@ const PROJECTS_DATA = [
         id: 1,
         name: "not ready yet",
         price: 150,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 2,
         name: "not ready yet",
         price: 300,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       },
       {
         id: 3,
         name: "not ready yet",
         price: 450,
-        image: "file:///C:/Users/Admin/.gemini/antigravity/scratch/neramit-siam-web/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
+        image: "file:///C:/dev/test/%E0%B9%80%E0%B8%99%E0%B8%A3%E0%B8%A1%E0%B8%B4%E0%B8%95%E0%B8%AA%E0%B8%A2%E0%B8%B2%E0%B8%A1.png",
         description: "not ready yet"
       }
     ],
