@@ -46,12 +46,13 @@
 
   <main id="main-content">
     <section class="hero reveal-section" id="top" aria-labelledby="hero-title">
-      <img class="hero-media" src="assets/development-world.png" alt="พื้นที่โลกสยามใน Roblox Studio ที่กำลังอยู่ระหว่างการสร้าง" width="1200" height="600" fetchpriority="high">
+      <img class="hero-media" id="hero-media" src="assets/development-world.png" alt="พื้นที่โลกสยามใน Roblox Studio ที่กำลังอยู่ระหว่างการสร้าง" width="1200" height="600" fetchpriority="high">
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
       <div class="hero-wash" aria-hidden="true"></div>
 
       <div class="hero-content">
         <p class="development-status"><span class="status-dot" aria-hidden="true"></span> โลกกำลังถูกสร้าง</p>
-        <h1 id="hero-title">เนรมิตสยาม</h1>
+        <h1 id="hero-title" data-typewriter="เนรมิตสยาม">เนรมิตสยาม</h1>
         <p class="hero-lede">ก้าวสู่โลกสยามยุครัตนโกสินทร์<br>และร่วมทำสงครามไปด้วยกัน</p>
         <div class="hero-actions">
           <button class="button button-primary" type="button" data-discord-action>เข้าร่วม Discord</button>

@@ -154,3 +154,159 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal-section").forEach((el) => {
   revealObserver.observe(el);
 });
+
+// ─── A: Parallax hero ────────────────────────────────────────────────────────
+const heroMedia = document.getElementById("hero-media");
+
+function updateParallax() {
+  if (!heroMedia || root.dataset.motion === "off") return;
+  const scrolled = window.scrollY;
+  const heroHeight = heroMedia.closest(".hero").offsetHeight;
+  if (scrolled > heroHeight) return;
+  heroMedia.style.transform = `translateY(${scrolled * 0.28}px) scale(1)`;
+}
+
+window.addEventListener("scroll", updateParallax, { passive: true });
+
+// ─── B: Gold dust particles ───────────────────────────────────────────────────
+(function initParticles() {
+  const canvas = document.getElementById("hero-particles");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  let particles = [];
+  let rafId = null;
+  let running = false;
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  function makeParticle() {
+    return {
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.6 + 0.4,
+      vx: (Math.random() - 0.5) * 0.35,
+      vy: -(Math.random() * 0.5 + 0.15),
+      alpha: Math.random() * 0.5 + 0.15,
+      life: 0,
+      maxLife: Math.random() * 220 + 100,
+    };
+  }
+
+  function initPool() {
+    particles = Array.from({ length: 60 }, makeParticle).map((p) => {
+      p.life = Math.floor(Math.random() * p.maxLife); // stagger start
+      return p;
+    });
+  }
+
+  function tick() {
+    if (!running) return;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (const p of particles) {
+      p.life++;
+      p.x += p.vx;
+      p.y += p.vy;
+
+      const progress = p.life / p.maxLife;
+      const fade = progress < 0.15
+        ? progress / 0.15
+        : progress > 0.75
+        ? 1 - (progress - 0.75) / 0.25
+        : 1;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      // gold hue
+      ctx.fillStyle = `oklch(72% 0.09 80 / ${p.alpha * fade})`;
+      ctx.fill();
+
+      if (p.life >= p.maxLife) Object.assign(p, makeParticle(), { life: 0 });
+    }
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function start() {
+    if (running) return;
+    running = true;
+    resize();
+    initPool();
+    tick();
+  }
+
+  function stop() {
+    running = false;
+    if (rafId) cancelAnimationFrame(rafId);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  // only run when motion is on
+  function syncMotion() {
+    if (root.dataset.motion === "off") stop();
+    else start();
+  }
+
+  window.addEventListener("resize", () => { resize(); }, { passive: true });
+
+  // watch motion toggle
+  motionToggle.addEventListener("click", () => {
+    // dataset updates after the click handler in setMotion; defer one tick
+    setTimeout(syncMotion, 0);
+  });
+
+  syncMotion();
+})();
+
+// ─── C: Typewriter on hero h1 ────────────────────────────────────────────────
+(function initTypewriter() {
+  const el = document.querySelector("[data-typewriter]");
+  if (!el || root.dataset.motion === "off") return;
+
+  const text = el.dataset.typewriter;
+  el.textContent = "";
+
+  const cursor = document.createElement("span");
+  cursor.className = "tw-cursor";
+  cursor.setAttribute("aria-hidden", "true");
+  cursor.textContent = "|";
+  el.appendChild(cursor);
+
+  let i = 0;
+  const delay = 90; // ms per character
+
+  function type() {
+    if (i < text.length) {
+      el.insertBefore(document.createTextNode(text[i]), cursor);
+      i++;
+      setTimeout(type, delay);
+    } else {
+      // remove blinking cursor after done
+      setTimeout(() => cursor.remove(), 1200);
+    }
+  }
+
+  // start after hero-copy-in animation offset (240ms + a bit)
+  setTimeout(type, 400);
+})();
+
+// ─── E: War diagram draw-in ───────────────────────────────────────────────────
+const warDiagram = document.querySelector(".war-diagram");
+if (warDiagram) {
+  const drawObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-drawn");
+          drawObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+  drawObserver.observe(warDiagram);
+}
