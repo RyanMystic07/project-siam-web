@@ -155,6 +155,84 @@ document.querySelectorAll(".reveal-section").forEach((el) => {
   revealObserver.observe(el);
 });
 
+// ─── Custom cursor ───────────────────────────────────────────────────────────
+(function initCursor() {
+  const dot = document.getElementById("cursor-dot");
+  const ring = document.getElementById("cursor-ring");
+  if (!dot || !ring) return;
+
+  // skip on touch / motion-off
+  if (!window.matchMedia("(pointer: fine)").matches) return;
+  if (root.dataset.motion === "off") return;
+
+  let mouseX = -999, mouseY = -999;
+  let ringX = -999, ringY = -999;
+  let rafId = null;
+
+  function onMove(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.transform = `translate(calc(${mouseX}px - 50%), calc(${mouseY}px - 50%))`;
+  }
+
+  function animateRing() {
+    // ring lags behind dot for a trailing feel
+    ringX += (mouseX - ringX) * 0.14;
+    ringY += (mouseY - ringY) * 0.14;
+    ring.style.transform = `translate(calc(${ringX}px - 50%), calc(${ringY}px - 50%))`;
+    rafId = requestAnimationFrame(animateRing);
+  }
+
+  // hover state on interactive elements
+  const interactiveSelector = "a, button, [role='button'], .text-action, .role-list span, label, select";
+
+  document.addEventListener("mouseover", (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      document.body.classList.add("cursor-hover");
+    }
+  });
+
+  document.addEventListener("mouseout", (e) => {
+    if (e.target.closest(interactiveSelector)) {
+      document.body.classList.remove("cursor-hover");
+    }
+  });
+
+  document.addEventListener("mousedown", () => document.body.classList.add("cursor-click"));
+  document.addEventListener("mouseup", () => document.body.classList.remove("cursor-click"));
+
+  // hide when leaving window
+  document.addEventListener("mouseleave", () => {
+    dot.style.opacity = "0";
+    ring.style.opacity = "0";
+  });
+  document.addEventListener("mouseenter", () => {
+    dot.style.opacity = "";
+    ring.style.opacity = "";
+  });
+
+  window.addEventListener("mousemove", onMove, { passive: true });
+
+  // sync with motion toggle
+  motionToggle.addEventListener("click", () => {
+    setTimeout(() => {
+      if (root.dataset.motion === "off") {
+        cancelAnimationFrame(rafId);
+        dot.style.display = "none";
+        ring.style.display = "none";
+        document.body.style.cursor = "auto";
+      } else {
+        dot.style.display = "";
+        ring.style.display = "";
+        document.body.style.cursor = "";
+        animateRing();
+      }
+    }, 0);
+  });
+
+  animateRing();
+})();
+
 // ─── A: Parallax hero ────────────────────────────────────────────────────────
 const heroMedia = document.getElementById("hero-media");
 
