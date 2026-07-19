@@ -1014,7 +1014,7 @@ html[data-motion="off"] .alliance-line {
 .reveal-section {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+  transition: opacity 800ms var(--ease-out), transform 800ms var(--ease-out);
 }
 
 .reveal-section.is-revealed {

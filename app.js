@@ -148,7 +148,7 @@ const revealObserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.08 }
+  { threshold: 0.22 }
 );
 
 document.querySelectorAll(".reveal-section").forEach((el) => {
