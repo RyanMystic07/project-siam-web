@@ -128,3 +128,29 @@ document.addEventListener("keydown", (event) => {
 reducedMotionQuery.addEventListener("change", (event) => {
   if (!readPreference(MOTION_KEY)) setMotion(!event.matches);
 });
+
+// auto-update copyright year
+const footerYear = document.getElementById("footer-year");
+if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+// footer discord button
+document.querySelectorAll(".footer-link[data-discord-action]").forEach((btn) => {
+  btn.addEventListener("click", openDiscord);
+});
+
+// scroll reveal
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-revealed");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.08 }
+);
+
+document.querySelectorAll(".reveal-section").forEach((el) => {
+  revealObserver.observe(el);
+});
