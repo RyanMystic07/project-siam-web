@@ -401,6 +401,10 @@ function renderRules() {
         <div class="rule-subitem">
           <h4 class="rule-subitem-title">ข้อ ${sub.id}: ${sub.title}</h4>
           <div class="rule-subitem-content">${sub.content}</div>
+          ${sub.subRules && sub.subRules.length > 0 ? `
+          <ul class="rule-subrules-list">
+            ${sub.subRules.map(sr => `<li class="rule-subrule-item">${sr}</li>`).join('')}
+          </ul>` : ''}
         </div>
       `).join('')}</div>`;
     } else if (cat.rulesList && cat.rulesList.length > 0) {
