@@ -13,7 +13,7 @@
   <link rel="icon" type="image/png" href="assets/neramit-siam-mark.png">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-discord-url="">
+<body data-discord-url="https://discord.gg/kQPdnQNF8a">
   <a class="skip-link" href="#main-content">ข้ามไปยังเนื้อหาหลัก</a>
 
   <header class="site-header" id="site-header">
@@ -40,24 +40,24 @@
       <button class="icon-button" id="motion-toggle" type="button" aria-pressed="true" aria-label="ปิดแอนิเมชัน" title="เปิดหรือปิดแอนิเมชัน">
         <span aria-hidden="true">≈</span>
       </button>
-      <button class="button button-primary header-cta" type="button" data-discord-action>เข้าร่วม Discord</button>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <img class="hero-media" src="assets/development-world.png" alt="พื้นที่โลกสยามใน Roblox Studio ที่กำลังอยู่ระหว่างการสร้าง" width="1200" height="600" fetchpriority="high">
+    <section class="hero reveal-section" id="top" aria-labelledby="hero-title">
+      <img class="hero-media" id="hero-media" src="assets/development-world.png" alt="พื้นที่โลกสยามใน Roblox Studio ที่กำลังอยู่ระหว่างการสร้าง" width="1200" height="600" fetchpriority="high">
+      <canvas class="hero-particles" id="hero-particles" aria-hidden="true"></canvas>
       <div class="hero-wash" aria-hidden="true"></div>
 
       <div class="hero-content">
-        <p class="development-status"><span aria-hidden="true"></span> โลกกำลังถูกสร้าง</p>
-        <h1 id="hero-title">เนรมิตสยาม</h1>
+        <p class="development-status"><span class="status-dot" aria-hidden="true"></span> กำลังสร้างโลก</p>
+        <h1 id="hero-title" data-typewriter="เนรมิตสยาม">เนรมิตสยาม</h1>
         <p class="hero-lede">ก้าวสู่โลกสยามยุครัตนโกสินทร์<br>และร่วมทำสงครามไปด้วยกัน</p>
         <div class="hero-actions">
           <button class="button button-primary" type="button" data-discord-action>เข้าร่วม Discord</button>
           <a class="button button-secondary" href="#world">สำรวจโลก</a>
         </div>
-        <p class="hero-footnote">ประสบการณ์ Roleplay บน Roblox · อยู่ระหว่างการพัฒนา</p>
+        <p class="hero-footnote">โลก Roleplay บน Roblox · อยู่ระหว่างการพัฒนา</p>
       </div>
 
       <div class="hero-seal" aria-hidden="true">
@@ -66,10 +66,10 @@
       </div>
     </section>
 
-    <section class="world-intro" id="world" aria-labelledby="world-title">
+    <section class="world-intro reveal-section" id="world" aria-labelledby="world-title">
       <div class="section-copy">
         <p class="chapter-name">พงศาวดารที่ยังไม่ถูกเขียน</p>
-        <h2 id="world-title">สยามที่ประวัติศาสตร์<br>ไม่เคยหยุดนิ่ง</h2>
+        <h2 id="world-title">สยามที่ประวัติศาสตร์<br>ยังไม่หยุดนิ่ง</h2>
         <p>ดินแดนแต่ละแห่งมีผู้ปกครอง พันธมิตร และศัตรูของตนเอง เส้นทางที่คุณเลือกจะเปลี่ยนทั้งชื่อเสียง อำนาจ และพรมแดนของโลกใบนี้</p>
         <button class="text-action" type="button" id="open-map">เปิดแผนที่ฉบับเต็ม <span aria-hidden="true">↗</span></button>
       </div>
@@ -80,7 +80,7 @@
       </figure>
     </section>
 
-    <section class="systems" id="systems" aria-labelledby="systems-title">
+    <section class="systems reveal-section" id="systems" aria-labelledby="systems-title">
       <header class="systems-heading">
         <p class="chapter-name">ชีวิตในแผ่นดิน</p>
         <h2 id="systems-title">ไม่ได้มีเพียงสนามรบ</h2>
@@ -91,7 +91,7 @@
         <article class="system-passage system-passage-war">
           <div class="passage-copy">
             <span class="passage-mark" aria-hidden="true">⚔</span>
-            <h3>สงครามที่เกิดจากผู้เล่น</h3>
+            <h3>สงครามที่คุณสร้าง</h3>
             <p>พันธมิตรอาจเปลี่ยนเป็นศัตรู เมืองอาจรุ่งเรืองหรือล่มสลาย และชื่อของผู้ชนะจะถูกจดจำโดยผู้เล่นด้วยกันเอง</p>
           </div>
           <div class="war-diagram" aria-label="ภาพจำลองความสัมพันธ์ระหว่างสามดินแดน">
@@ -111,15 +111,15 @@
             <span>ช่างฝีมือ</span>
           </div>
           <div class="passage-copy">
-            <span class="passage-mark" aria-hidden="true">ตรา</span>
-            <h3>บทบาทที่มีน้ำหนัก</h3>
+            <span class="passage-mark" aria-hidden="true">🏛</span>
+            <h3>บทบาทที่มีความหมาย</h3>
             <p>คุณไม่จำเป็นต้องถือดาบเพื่อเปลี่ยนโลก อำนาจ เงินตรา ฝีมือ และข่าวสาร ล้วนเป็นอาวุธในแผ่นดินเดียวกัน</p>
           </div>
         </article>
 
         <article class="system-passage system-passage-world">
           <div class="passage-copy">
-            <span class="passage-mark" aria-hidden="true">แผน</span>
+            <span class="passage-mark" aria-hidden="true">🗺</span>
             <h3>ดินแดนที่ชวนออกเดินทาง</h3>
             <p>จากเขตเมืองที่ได้รับการคุ้มครอง สู่ป่าและภูเขาที่เต็มไปด้วยอันตราย ทุกเส้นทางมีเรื่องราวรอให้ค้นพบ</p>
           </div>
@@ -130,7 +130,7 @@
       </div>
     </section>
 
-    <section class="development" id="development" aria-labelledby="development-title">
+    <section class="development reveal-section" id="development" aria-labelledby="development-title">
       <div class="development-media">
         <img src="assets/development-world.png" alt="ฉากพื้นที่โลกสยามใน Roblox Studio ระหว่างการพัฒนา" width="1200" height="600" loading="lazy">
         <span class="in-development-label">ภาพระหว่างการพัฒนา</span>
@@ -140,16 +140,16 @@
         <p class="chapter-name">จากโต๊ะสร้างโลก</p>
         <h2 id="development-title">ประตูเมืองยังไม่เปิด<br>แต่โลกเริ่มมีลมหายใจแล้ว</h2>
         <p>เกมยังไม่เปิดให้บริการ ภาพที่เห็นคือพื้นที่จริงใน Roblox Studio ขณะทีมงานกำลังวางภูมิประเทศ ระบบประเทศ และเวทีสำหรับสงคราม</p>
-        <p class="development-honesty">เราจะแสดงความคืบหน้าตามที่เป็นจริง และไม่ใช้ภาพแนวคิดแทนผลงานที่ยังสร้างไม่เสร็จ</p>
+        <p class="development-honesty">ทุกภาพที่เห็นคืองานจริง — ไม่ใช่สัญญา</p>
       </div>
     </section>
 
-    <section class="final-invitation" aria-labelledby="invitation-title">
+    <section class="final-invitation reveal-section" aria-labelledby="invitation-title">
       <img src="assets/neramit-siam-mark.png" alt="" width="512" height="512" loading="lazy">
       <div>
         <p class="chapter-name">จดหมายเชิญจากสยาม</p>
         <h2 id="invitation-title">เข้าร่วมก่อนประตูเมืองเปิด</h2>
-        <p>พบผู้เล่นกลุ่มแรก รับข่าวการพัฒนา และเตรียมบทบาทของคุณก่อนสงครามครั้งแรกจะเริ่มขึ้น</p>
+        <p>พบผู้เล่นกลุ่มแรก ร่วมติดตามความคืบหน้า และเลือกบทบาทของคุณก่อนสงครามเริ่ม</p>
         <div class="invitation-actions">
           <button class="button button-light" type="button" data-discord-action>เข้าร่วม Discord</button>
           <a class="button button-on-red" href="portal.html">เปิดคลังข้อมูลทดลอง</a>
@@ -161,7 +161,10 @@
   <footer class="site-footer">
     <a class="footer-brand" href="#top">เนรมิตสยาม</a>
     <p>โลกสยามแฟนตาซียุครัตนโกสินทร์ · สร้างบน Roblox</p>
-    <p>โครงการอยู่ระหว่างการพัฒนา</p>
+    <nav class="footer-links" aria-label="ลิงก์ท้ายหน้า">
+      <a class="footer-link" href="portal.html">คลังข้อมูล</a>
+      <span class="footer-copy">© 2025–<span id="footer-year">2026</span> เนรมิตสยาม</span>
+    </nav>
   </footer>
 
   <dialog class="map-dialog" id="map-dialog" aria-labelledby="map-dialog-title">
@@ -186,6 +189,10 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- custom cursor -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
   <script src="app.js"></script>
 </body>
