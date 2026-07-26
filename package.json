@@ -1,0 +1,21 @@
+{
+  "name": "project-siam-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "node dist/index.js",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.7",
+    "hono": "^4.7.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.16.0",
+    "@types/pg": "^8.11.14",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  }
+}
