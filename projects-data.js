@@ -1,8 +1,8 @@
 const PROJECTS_DATA = [
   {
     id: "project-1",
-    name: "project-1",
-    tagline: "not ready yet",
+    name: "Neramit Siam",
+    tagline: "เทสต์โปรเจกต์ เนรมิตสยาม",
     description: "not ready yet",
     theme: {
       accentColor: "#d4af37",
@@ -536,7 +536,7 @@ const PROJECTS_DATA = [
             content: "<p>ห้ามแอดมินใช้คำสั่งผู้ดูแล (Admin Commands) เพื่อเสกไอเทม เงิน ยศ หรือสร้างความได้เปรียบให้ตัวเองหรือพวกพ้องในระบบโรลเพลย์เด็ดขาด [ทัณฑ์สถาน: ปลดออกจากตำแหน่งบริหารและเนรเทศถาวรทันทีโดยไม่มีข้อแก้ตัว]</p>",
             subRules: [
               "ข้อ 4.2.1: ห้ามแอดมินเสกอาวุธ เงิน หรือไอเทมให้ตัวเองและกลุ่มเพื่อน",
-              "ข้อ 4.2.2: ห้ามใช้วดาร์ป (TP) หรือโหมดอมตะ (Godmode) ขณะร่วมเล่นโรลเพลย์ปกติ"
+              "ข้อ 4.2.2: ห้ามใช้วาร์ป (TP) หรือโหมดอมตะ (Godmode) ขณะร่วมเล่นโรลเพลย์ปกติ"
             ]
           },
           {
@@ -659,6 +659,10 @@ const PROJECTS_DATA = [
       // - description  : รายละเอียด/คำอธิบายเพิ่มเติม (ไม่ใส่ก็ได้)
       // - allies       : array ของ id ประเทศที่เป็นพันธมิตรด้วย เช่น [2] = เป็นพันธมิตรกับประเทศ id 2
       // - atWar        : array ของ id ประเทศที่กำลังทำสงครามด้วย เช่น [3] = ทำสงครามกับประเทศ id 3
+      // - rank         : อันดับใน Tier List ใช้ตัวเลข 1 | 2 | 3 (1 = แข็งแกร่งที่สุด/มหาอำนาจ, 2 = ปานกลาง, 3 = เมืองเล็ก/เมืองขึ้น)
+      // - vassalOf     : id ของประเทศที่เป็น "เจ้าเมือง" (ประเทศนี้เป็นเมืองขึ้นของใคร) ถ้าเป็นเอกราชให้ใส่ null
+      //                  เช่น vassalOf: 1 = ประเทศนี้เป็นเมืองขึ้นของประเทศ id 1
+      //                  (เวลาเมืองไหนไปตีชนะอีกเมือง ก็แก้ vassalOf ของฝ่ายแพ้ให้เป็น id ของฝ่ายชนะ และเปลี่ยน status เป็น "colony")
       // ตัวอย่าง: ถ้าอยุธยา (id:1) เป็นพันธมิตรกับล้านช้าง (id:2)
       //   -> อยุธยา ใส่ allies: [2]  และ ล้านช้าง ใส่ allies: [1] ด้วย (ใส่ทั้งสองฝั่งให้ตรงกัน)
       nations: [
@@ -671,7 +675,9 @@ const PROJECTS_DATA = [
           status: "independent",
           description: "not ready yet",
           allies: [2],
-          atWar: [3]
+          atWar: [3],
+          rank: 1,
+          vassalOf: null
         },
         {
           id: 2,
@@ -682,7 +688,9 @@ const PROJECTS_DATA = [
           status: "colony",
           description: "not ready yet",
           allies: [1],
-          atWar: []
+          atWar: [],
+          rank: 3,
+          vassalOf: 1
         },
         {
           id: 3,
@@ -693,7 +701,22 @@ const PROJECTS_DATA = [
           status: "collapsed",
           description: "not ready yet",
           allies: [],
-          atWar: [1]
+          atWar: [1],
+          rank: 2,
+          vassalOf: null
+        },
+        {
+          id: 4,
+          name: "เขมร",
+          foundedDate: "26/7/69",
+          founder: "พี่หน่วง",
+          memberCount: 0,
+          status: "colony",
+          description: "เทสนะ",
+          allies: [],
+          atWar: [1],
+          rank: 3,
+          vassalOf: null
         }
       ],
       pins: [
