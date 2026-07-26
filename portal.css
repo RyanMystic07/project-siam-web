@@ -1286,6 +1286,124 @@ body {
   border-color: rgba(255, 255, 255, 0.08);
 }
 
+.relation-tag.vassal {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--gold-color);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Tier List (จัดอันดับ) styling */
+.tier-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.tier-row {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.tier-label-col {
+  flex: 0 0 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tier-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.tier-label-text {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+.tier-row.tier-1 .tier-label-col {
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.tier-row.tier-1 .tier-label-text {
+  color: var(--gold-color);
+}
+
+.tier-row.tier-2 .tier-label-col {
+  background: rgba(168, 34, 41, 0.1);
+}
+
+.tier-row.tier-2 .tier-label-text {
+  color: var(--crimson-hover, var(--crimson-color));
+}
+
+.tier-row.tier-3 .tier-label-col {
+  background: rgba(110, 115, 130, 0.1);
+}
+
+.tier-row.tier-3 .tier-label-text {
+  color: var(--text-sub);
+}
+
+.tier-chips-col {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.tier-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+}
+
+.tier-chip-name {
+  font-weight: 500;
+  color: var(--text-main);
+  font-size: 0.92rem;
+}
+
+.tier-chip-vassal {
+  font-size: 0.75rem;
+  color: var(--gold-color);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 3px;
+  padding: 0.1rem 0.5rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .tier-row {
+    flex-direction: column;
+  }
+
+  .tier-label-col {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.75rem 1rem;
+  }
+}
+
 .main-footer {
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
