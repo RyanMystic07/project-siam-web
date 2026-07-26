@@ -130,6 +130,12 @@ function selectProject(projectId) {
     mapTab.style.display = hasMap ? "" : "none";
   }
 
+  const hasNations = project.map && project.map.nations && project.map.nations.length > 0;
+  const rankingTab = document.querySelector('.nav-tab[data-tab="ranking"]');
+  if (rankingTab) {
+    rankingTab.style.display = hasNations ? "" : "none";
+  }
+
   currentSlideIndex = 0;
   renderProjectContent();
   startSlider();
@@ -236,6 +242,7 @@ function renderProjectContent() {
   renderJobs();
   renderMapPins();
   renderNations();
+  renderTierList();
   renderRules();
   renderStatuses();
   renderServices();
@@ -583,6 +590,10 @@ function renderNations() {
       `<span class="relation-tag war">⚔️ ${getNationNameById(id)}</span>`
     ).join("");
 
+    const vassals = getNationsList().filter(n => n.vassalOf === nation.id).map(n =>
+      `<span class="relation-tag vassal">🏯 ${n.name}</span>`
+    ).join("");
+
     card.innerHTML = `
       <div class="nation-card-header">
         <h3 class="nation-name">${nation.name}</h3>
@@ -592,6 +603,7 @@ function renderNations() {
         <span>📅 เปิดเมื่อ: <strong>${nation.foundedDate || "not ready yet"}</strong></span>
         <span>👑 ผู้ก่อตั้ง: <strong>${nation.founder || "not ready yet"}</strong></span>
         <span>👥 จำนวนสมาชิก: <strong>${nation.memberCount ?? "not ready yet"} คน</strong></span>
+        ${nation.vassalOf != null ? `<span>🏳️ เมืองขึ้นของ: <strong>${getNationNameById(nation.vassalOf)}</strong></span>` : ""}
       </div>
       ${nation.description ? `<p class="nation-desc">${nation.description}</p>` : ""}
       <div class="nation-relations">
@@ -603,8 +615,68 @@ function renderNations() {
           <span class="nation-relation-label">สงครามกับ:</span>
           ${atWar || `<span class="relation-tag none">ไม่มีสงคราม</span>`}
         </div>
+        ${vassals ? `
+        <div class="nation-relation-row">
+          <span class="nation-relation-label">เมืองขึ้น:</span>
+          ${vassals}
+        </div>` : ""}
       </div>
     `;
     container.appendChild(card);
+  });
+}
+
+// Tier List (จัดอันดับ) rendering
+function tierMeta(rank) {
+  switch (rank) {
+    case 1: return { label: "ระดับ 1 — มหาอำนาจ", icon: "🥇", cls: "tier-1" };
+    case 2: return { label: "ระดับ 2 — ปานกลาง", icon: "🥈", cls: "tier-2" };
+    case 3: return { label: "ระดับ 3 — เมืองเล็ก", icon: "🥉", cls: "tier-3" };
+    default: return { label: "ยังไม่จัดอันดับ", icon: "❔", cls: "tier-0" };
+  }
+}
+
+function renderTierList() {
+  const container = document.getElementById("tier-list-container");
+  if (!container) return;
+  container.innerHTML = "";
+
+  const nations = getNationsList();
+
+  if (nations.length === 0) {
+    container.innerHTML = `<p style="text-align:center; color:var(--text-muted);">ยังไม่มีข้อมูลดินแดนในระบบ</p>`;
+    return;
+  }
+
+  [1, 2, 3].forEach(rank => {
+    const meta = tierMeta(rank);
+    const nationsInTier = nations.filter(n => (n.rank || 0) === rank);
+
+    const row = document.createElement("div");
+    row.className = `tier-row ${meta.cls}`;
+
+    const chips = nationsInTier.map(n => {
+      const vassalNote = n.vassalOf != null
+        ? `<span class="tier-chip-vassal">เมืองขึ้นของ ${getNationNameById(n.vassalOf)}</span>`
+        : "";
+      return `
+        <div class="tier-chip">
+          <span class="tier-chip-name">${n.name}</span>
+          <span class="nation-status-badge ${n.status || "independent"}">${nationStatusLabel(n.status || "independent")}</span>
+          ${vassalNote}
+        </div>
+      `;
+    }).join("");
+
+    row.innerHTML = `
+      <div class="tier-label-col">
+        <span class="tier-icon">${meta.icon}</span>
+        <span class="tier-label-text">${meta.label}</span>
+      </div>
+      <div class="tier-chips-col">
+        ${chips || `<span class="relation-tag none">ยังไม่มีดินแดนในระดับนี้</span>`}
+      </div>
+    `;
+    container.appendChild(row);
   });
 }
